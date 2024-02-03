@@ -72,8 +72,13 @@
   right: 0;
   border: none;
   font-size: 15px;
-  border-color: blueviolet;
+  background-color: blueviolet;
   color:black;
   transition: 0.2s all;
   box-shadow: 0 0 10px black;
+}
+
+.submit-btn:active{
+  transform: scale(0.8);
+  box-shadow: 0 0 5px black;
 }

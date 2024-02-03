@@ -1,9 +1,20 @@
 import React from 'react'
 
-const InputField = () => {
+
+interface props{
+    todo: string;
+    setTodo: React.Dispatch<React.SetStateAction<string>>;
+}
+const InputField: React.FC<props> = ({todo, setTodo}) => {
   return (
     <form className='input'>
-        <input type="text" placeholder='Entere a task ' className='input-box'/>
+        <input 
+            type="text" 
+            value={todo}
+            onChange={(e)=>setTodo(e.target.value)}
+            placeholder='Entere a task ' 
+            className='input-box'
+        />
         <button className='submit-btn'>
             Go 
         </button>

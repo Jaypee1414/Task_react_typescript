@@ -24,17 +24,56 @@
   width: 50vw;
   height: 95vh;
   display: flex;
-  justify-content: center;
+  align-items: center;
   flex-wrap: wrap;
+  flex-direction: column;
   border: 1px solid black;
   border-radius: 5px;
 }
 
 .header{
-  position: absolute;
-  text-align: center;
   color: black;
   font-family: 'Handjet', sans-serif;
   font-style: italic;
   padding-top: 2rem;
+  z-index: 1;
+}
+
+
+/* INPUT FIELD COMPONENT UI */
+.input{
+  display: flex;
+  width: 90%;
+  position: relative;
+  align-items: center;
+}
+
+.input-box{
+  width: 100%;
+  border-radius: 50px;
+  padding: 20px 30px;
+  font-size: 25px;
+  border: none;
+  transition: 0.2s;
+  box-shadow: inset 0 0 5px black;
+}
+
+.input-box:focus{
+  box-shadow: 0 0 10px 1000px rgba(0, 0, 0, 0.7);
+  outline: none;
+}
+
+.submit-btn{
+  position: absolute;
+  width: 50px;
+  height: 50px;
+  margin: 12px;
+  border-radius:50px;
+  right: 0;
+  border: none;
+  font-size: 15px;
+  border-color: blueviolet;
+  color:black;
+  transition: 0.2s all;
+  box-shadow: 0 0 10px black;
 }

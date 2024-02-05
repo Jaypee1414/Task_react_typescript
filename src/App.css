@@ -90,3 +90,25 @@
   width: 90%;
   flex-wrap: wrap;
 }
+
+/* Single UI */
+.todos-single{
+  display: flex;
+  width: 29%;
+  border-radius: 5px;
+  padding: 20px;
+  margin-top: 15px;
+}
+
+.todos-text{
+  flex: 1;
+  padding: 5px;
+  border: none;
+  font-size: 20px;
+}
+
+.icon{
+  margin-left: 10px;
+  font-size: 25px;
+  cursor: pointer;
+}

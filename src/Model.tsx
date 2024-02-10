@@ -7,6 +7,3 @@ export interface todo{
 }
 
 
-// const ReducerExample=()=>{
-//     const [state, dispatch] = useReducer(TodoReducer , []);
-// }

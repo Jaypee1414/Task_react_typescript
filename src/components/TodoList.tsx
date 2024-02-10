@@ -1,31 +1,46 @@
 import React from 'react'
 import {todo} from '../Model'
 import Single from './Single';
+import {Droppable} from 'react-beautiful-dnd'
 
 interface props{
     todos : todo[];
     setTodos:  React.Dispatch<React.SetStateAction<todo[]>>;
-}
+    complete: todo[]
+    setCompleteTodos: React.Dispatch<React.SetStateAction<todo[]>>;
+  }
 
-const TodoList:React.FC<props>= ({todos, setTodos}) => {
+const TodoList:React.FC<props>= ({todos, setTodos, complete, setCompleteTodos}) => {
   return (
     <div className="todo--container">
-      <div className="todos">
-        <span className="todos__heading">Active Task</span>
+      <Droppable droppableId='TodoList'>
         {
-          todos.map((todo)=>(
-            <Single todo={todo} todos={todos} key={todo.id} setTodos={setTodos}/>
-          ))
+          (provided)=>(
+            <div className="todos" ref={provided.innerRef} {...provided.droppableProps}>
+            <span className="todos__heading">Active Task</span>
+            {
+              todos.map((todo, index)=>(
+                <Single todo={todo} index={index} todos={todos} key={todo.id} setTodos={setTodos}/>
+              ))
+            }
+          </div>
+          )
         }
-      </div>
-      <div className="todos remove">
-      <span className="todos__heading">Complete Task</span>
+      </Droppable>
+      <Droppable droppableId='TodoList'>
         {
-          todos.map((todo)=>(
-            <Single todo={todo} todos={todos} key={todo.id} setTodos={setTodos}/>
-          ))
+          (provided)=>(
+            <div className="todos remove" ref={provided.innerRef} {...provided.droppableProps}>
+            <span className="todos__heading">Complete Task</span>
+              {
+                complete.map((todo,index)=>(
+                  <Single todo={todo} index={index} todos={complete} key={todo.id} setTodos={setCompleteTodos}/>
+                ))
+              }
+            </div>
+          )
         }
-      </div>
+      </Droppable>
     </div>
 
   )

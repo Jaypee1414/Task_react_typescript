@@ -107,6 +107,10 @@
   align-items: flex-start;
 }
 
+.remove{
+  background-color: rgb(235, 103, 80);
+}
+
 /* Single UI */
 .todos-single{
   display: flex;
